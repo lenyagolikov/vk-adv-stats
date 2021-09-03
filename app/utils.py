@@ -32,10 +32,11 @@ def save_data_delta():
             data.at[i - 1, 'spent']
         data.at[i, 'leads'] = data.at[i, 'leads'] - data.at[i - 1, 'leads']
         data.at[i, 'reach'] = data.at[i, 'reach'] - data.at[i - 1, 'reach']
-        data.at[i, 'join_rate'] = data.at[i, 'join_rate'] - data.at[i - 1, 'join_rate']
+        data.at[i, 'join_rate'] = data.at[i, 'join_rate'] - \
+            data.at[i - 1, 'join_rate']
         data.at[i, 'ecpc'] = data.at[i, 'ecpc'] - data.at[i - 1, 'ecpc']
         data.at[i, 'ecpm'] = data.at[i, 'ecpm'] - data.at[i - 1, 'ecpm']
-        data.at[i, 'total_reach'] = data.at[i, 'total_reach'] - data.at[i - 1, 'total_reach']
-
+        data.at[i, 'total_reach'] = data.at[i, 'total_reach'] - \
+            data.at[i - 1, 'total_reach']
 
     data.to_excel('delta.xlsx', index=False)

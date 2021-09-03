@@ -47,7 +47,7 @@ def get_reach(adv):
         'ids_type': 'ad',
         'ids': adv,
     })
-    
+
     stats = response.json()['response'][0]
 
     reach_total = stats.get('reach_total', 0)
@@ -60,4 +60,3 @@ def get_reach(adv):
 
 def target_stats(adv):
     url = 'https://api.vk.com/method/ads.getTargetingStats'
-
