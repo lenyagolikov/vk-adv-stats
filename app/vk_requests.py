@@ -30,11 +30,10 @@ def get_stats(adv):
         ctr = stats[0].get('ctr', 0)
         ecpc = stats[0].get('effective_cost_per_click', 0)
         ecpm = stats[0].get('effective_cost_per_mille', 0)
-        cpf = stats[0].get('effective_cpf', 0)
 
-        return shows, clicks, lead_form_sends, reach, join_rate, spent, ctr, ecpc, ecpm, cpf
+        return shows, clicks, lead_form_sends, reach, join_rate, spent, ctr, ecpc, ecpm
 
-    return 0, 0, 0, 0, 0, 0, 0, 0
+    return 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 
 def get_reach(adv):
