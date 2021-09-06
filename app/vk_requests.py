@@ -1,4 +1,5 @@
 import requests
+import json
 from decouple import config
 
 adv_ids = map(int, config('adv_ids').split(', '))
@@ -59,3 +60,23 @@ def get_reach(adv):
 
 def target_stats(adv):
     url = 'https://api.vk.com/method/ads.getTargetingStats'
+
+    response = requests.get(url, params={
+        'access_token': config('token'),
+        'v': config('version'),
+        'account_id': config('account_id'),
+        'ad_id': adv,
+        'ad_format': 1,
+        'ad_platform': 1,
+    })
+
+
+def update_ads(adv):
+    url = 'https://api.vk.com/method/ads.updateAds'
+
+    response = requests.get(url, params={
+        'access_token': config('token'),
+        'v': config('version'),
+        'account_id': config('account_id'),
+        'data': 'json-object',
+    })

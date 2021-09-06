@@ -13,8 +13,8 @@ def main():
         current_date = datetime.now().strftime("%d.%m.%y")
 
         utils.save_data(adv_id, *stats, *reach, current_date, current_time)
-        utils.save_data_delta()
-        utils.calculate_values()
+        utils.save_data_delta(adv_id)
+        utils.calculate_values(adv_id)
 
 
 if __name__ == '__main__':
