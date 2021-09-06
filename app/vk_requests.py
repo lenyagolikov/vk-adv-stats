@@ -50,11 +50,11 @@ def get_reach(adv):
     stats = response.json()['response'][0]
 
     reach_total = stats.get('reach_total', 0)
-    # links = stats.get('links', 0)
-    # to_group = stats.get('to_group', 0)
+    links = stats.get('links', 0)
+    to_group = stats.get('to_group', 0)
     # join_group = stats.get('join_group', 0)
 
-    return reach_total
+    return reach_total, links, to_group
 
 
 def target_stats(adv):

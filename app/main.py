@@ -12,7 +12,7 @@ def main():
         current_time = datetime.now().strftime("%H:%M")
         current_date = datetime.now().strftime("%d.%m.%y")
 
-        utils.save_data(adv_id, *stats, reach, current_date, current_time)
+        utils.save_data(adv_id, *stats, *reach, current_date, current_time)
         utils.save_data_delta()
         utils.calculate_values()
 
