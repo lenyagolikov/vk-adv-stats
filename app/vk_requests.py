@@ -15,8 +15,8 @@ def get_stats(adv):
         'ids_type': 'ad',
         'ids': adv,
         'period': 'day',
-        'date_from': '2021-09-03',
-        'date_to': '2021-09-03',
+        'date_from': '2021-09-08',
+        'date_to': '2021-09-08',
     })
 
     stats = response.json()['response'][0]['stats']
@@ -80,3 +80,15 @@ def update_ads(adv):
         'account_id': config('account_id'),
         'data': 'json-object',
     })
+    
+    
+def get_flood_stats(adv):
+    url = 'https://api.vk.com/method/ads.getFloodStats'
+
+    response = requests.get(url, params={
+        'access_token': config('token'),
+        'v': config('version'),
+        'account_id': config('account_id'),
+    })
+    
+    return response.json()
